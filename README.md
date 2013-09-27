@@ -1,6 +1,16 @@
+# Position
+
+## Draggable persistent elements using MySQL and jQuery.
+
+### Features
+
+* absolutely positioned elements, positioned in relation to the closest edges of the containing div.
+* Not much else.
+
+----
 This documents a tool I created while working on a simple groundwater modeling project.
 
-In the process, I found that I wanted to have clickable labels overlaying a visual model (thank you "Andy Seery":http://andyseery.com), but I could not really tell where my client wanted the labels to be.
+In the process, I found that I wanted to have clickable labels overlaying a visual model (thank you [Andy Seery](http://andyseery.com)), but I could not really tell where my client wanted the labels to be.
 
 I also knew that I wanted these to be absolutely positioned, based on a percentage of their parent element.
 
