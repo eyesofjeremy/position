@@ -1,0 +1,51 @@
+#page {
+    padding: 2em;
+}
+#glassbox {
+	background:#333;
+	border:2px solid #000;
+	margin:30px auto auto auto;
+	position:relative;
+	max-width:900px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	
+}
+
+.ecosys #ecosys,
+.Policy #Policy,
+.GWuse #GWuse {
+    font-weight: bold;
+}
+
+img {
+    max-width: 100%;
+}
+
+.edit #glassbox {
+    border-color: blue;
+}
+
+.marker {
+    display: block;
+    position: absolute;
+    z-index: 30;
+    line-height: 1.2em;
+    padding: .6em 1.2em;
+
+    border-radius: 1.8em;
+    border: 3px solid #fff;
+    height: 1em;
+    color: #bfe2fa;
+    background: rgba(0,0,0,.6); /*DEV*/
+}
+
+.edit .marker {
+    background: rgba(0,0,140, .7);
+}
+
+#respond{
+	margin:0 auto 0 auto;
+	width:960px;
+	
+}
