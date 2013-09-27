@@ -13,13 +13,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Saving Coordinate State with jQuery</title>
 
-<link rel="stylesheet" href="style.css" type="text/css" />
-<link rel="stylesheet" href="http://waterinthewest.stanford.edu/cgi-bin/groundwater/themes/bootstrap_for_gw/css/groundwater.css">
-<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
-<script type="text/javascript" src="js/jquery.json-2.2.min.js"></script>
-<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
-
+	<link rel="stylesheet" href="style.css" type="text/css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="js/jquery.json-2.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.zclip.min.js"></script>
 
 </head>
 
@@ -61,7 +59,7 @@
             }
         });	
 
-		});
+	});
 
 </script>
 
