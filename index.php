@@ -25,30 +25,26 @@ mysqli_select_db($link, $database) or die("MySQL Error: " . mysqli_error());
 
 <div id="page" class="<?php echo $_GET['markers'];?>">
 <h1>Move Markers</h1>
-<p>This tool will help you tell me exactly where you'd like all of the markers to be. Ideally, this would feed directly into the database. But this is close.</p>
-<p>To start, click on one of the sections:</p>
-<div id="links">
-<a href="<?php echo $_SERVER['PHP_SELF']; ?>?markers=ecosys" id="ecosys">Ecosys</a> / 
+<p>This tool will help you tell me exactly where you'd like all of the markers to be.</p>
+<p>To start, click on one of the sections: <a href="<?php echo $_SERVER['PHP_SELF']; ?>?markers=ecosys" id="ecosys">Ecosys</a> / 
 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?markers=Policy" id="Policy">Policy</a> / 
 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?markers=GWuse" id="GWuse">Water Use</a>
-</div>
+</p>
 
 <p>Then click on the 'edit' link, and when markers are blue, you can move them around. That is all you need for now—I can copy the positions and get that into the system.</p>
 <a href="#edit" id="edit">Edit</a> / <a href="#" id="normal">Normal</a> / <a href="copy.php?markers=<?php echo $_GET['markers']; ?>">Copy Position</a>
 <div id="glassbox"><img src="groundwater.jpg">
 <?php 
-		if(isset($_GET['markers'])) {
-            $get_water_elements = mysqli_query($link, "SELECT * FROM water_elements");
-            
-            $water_elements = array();
-            while($row = mysqli_fetch_array($get_water_elements)) {
-                if(strpos($row['Name'], $_GET['markers'].'_') !== FALSE) {
-                echo '<a class="marker" rel="'.$row['id'].'" style="'.$row['horiz'].'; '.$row['vert'].'">'.$row['Label'].'</a>';
-                }
-            }	
+	$default = 'ecosys';
+	$markers = (isset($_GET['markers'])) ? $_GET['markers'] : $default;
+	$get_water_elements = mysqli_query($link, "SELECT * FROM water_elements");
+	
+	$water_elements = array();
+	while($row = mysqli_fetch_array($get_water_elements)) {
+		if(strpos($row['Name'], $markers.'_') !== FALSE) {
+		echo '<a class="marker" rel="'.$row['id'].'" style="'.$row['horiz'].'; '.$row['vert'].'">'.$row['Label'].'</a>';
 		}
-		
-		
+	}	
 ?>
 </div>
 <div id="respond"></div>

@@ -15,3 +15,14 @@ In the process, I found that I wanted to have clickable labels overlaying a visu
 I also knew that I wanted these to be absolutely positioned, based on a percentage of their parent element.
 
 There are a number of instances which document using jQuery in conjunction with MySQL to create persistent, draggable elements. But I had not seen anything using percentages, in particular percentages which switch from left to right, top to bottom, depending on which edge a label is closer to.
+
+The files here include a sample SQL table to add to a new database. Not included is dbconnect.php, which needs to look like this:
+
+	<?php
+	  $host="mysql.host.here";
+	  $username="username";
+	  $password="password";
+	  $database="yourDatabaseName";
+	?>
+
+TODO: Would be nice to have this all in one file.
