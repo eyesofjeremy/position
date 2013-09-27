@@ -1,11 +1,11 @@
 <?php 
+	include ('dbconnect.php');
 
+	$link = mysqli_connect($host, $username, $password) or die("MySQL Error: " . mysqli_error());
+	mysqli_select_db($link, $database) or die("MySQL Error: " . mysqli_error());
 
-include ('dbconnect.php');
-
-$link = mysqli_connect($host, $username, $password) or die("MySQL Error: " . mysqli_error());
-mysqli_select_db($link, $database) or die("MySQL Error: " . mysqli_error());
-
+	$default = 'ecosys'; // set default group of markers
+	$markers = (isset($_GET['markers'])) ? $_GET['markers'] : $default;
 ?>
 <!DOCTYPE html>
 <html>
@@ -25,7 +25,7 @@ mysqli_select_db($link, $database) or die("MySQL Error: " . mysqli_error());
 
 <body>
 
-<div id="page" class="<?php echo $_GET['markers'];?>">
+<div id="page" class="<?php echo $markers; ?>">
 <h1>Copy Marker Positions</h1>
 <div id="links">
 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?markers=ecosys" id="ecosys">Ecosys</a> / 
@@ -33,19 +33,17 @@ mysqli_select_db($link, $database) or die("MySQL Error: " . mysqli_error());
 <a href="<?php echo $_SERVER['PHP_SELF']; ?>?markers=GWuse" id="GWuse">Water Use</a>
 </div>
 
-<a href="index.php?markers=<?php echo $_GET['markers']; ?>" id="edit">Back to Editor</a>
+<a href="index.php?markers=<?php echo $markers; ?>" id="edit">Back to Editor</a>
 <div id="glassbox"><img src="groundwater.jpg">
 <?php 
-		if(isset($_GET['markers'])) {
-            $get_water_elements = mysqli_query($link, "SELECT * FROM water_elements");
-            
-            $water_elements = array();
-            while($row = mysqli_fetch_array($get_water_elements)) {
-                if(strpos($row['Name'], $_GET['markers'].'_') !== FALSE) {
-                echo '<a class="marker" rel="'.$row['id'].'" style="'.$row['horiz'].'; '.$row['vert'].'">'.$row['Label'].'</a>';
-                }
-            }	
+	$get_water_elements = mysqli_query($link, "SELECT * FROM water_elements");
+	
+	$water_elements = array();
+	while($row = mysqli_fetch_array($get_water_elements)) {
+		if(strpos($row['Name'], $markers.'_') !== FALSE) {
+		echo '<a class="marker" rel="'.$row['id'].'" style="'.$row['horiz'].'; '.$row['vert'].'">'.$row['Label'].'</a>';
 		}
+	}	
 		
 		
 ?>
