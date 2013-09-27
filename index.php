@@ -14,7 +14,6 @@ mysqli_select_db($link, $database) or die("MySQL Error: " . mysqli_error());
 <title>Move the markers</title>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
-<link rel="stylesheet" href="http://waterinthewest.stanford.edu/cgi-bin/groundwater/themes/bootstrap_for_gw/css/groundwater.css">
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.3.2.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.7.2.custom.min.js"></script>
 <script type="text/javascript" src="js/jquery.json-2.2.min.js"></script>

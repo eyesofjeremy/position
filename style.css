@@ -1,5 +1,7 @@
 #page {
     padding: 2em;
+    color: #444;
+    font-family: Helvetica, Arial, Verdana, sans-serif;
 }
 #glassbox {
 	background:#333;
