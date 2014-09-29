@@ -48,7 +48,7 @@
 </div>
 <div id="respond"></div>
 
-
+<p id="credits"><a href="https://github.com/eyesofjeremy/position/" title="grab the source code">Repository @ Github</a><p>
 </div>
 </body>
 <script type="text/javascript">

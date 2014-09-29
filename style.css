@@ -51,3 +51,11 @@ img {
 	width:960px;
 	
 }
+
+#credits {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 12em;
+	padding: 1em;
+}
